@@ -9,4 +9,4 @@ script:
   - echo 'Linting!'
   - yarn lint
   - echo 'Testing!'
-  - yarn test:prod
+  - yarn test
