@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+  - "8"
+cache: yarn
+script:
+  - echo 'Build starts!!'
+  - echo 'Installing Deps!'
+  - yarn
+  - echo 'Linting!'
+  - yarn lint
+  - echo 'Testing!'
+  - yarn test:prod
