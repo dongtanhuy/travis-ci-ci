@@ -10,3 +10,8 @@ script:
   - yarn lint
   - echo 'Testing!'
   - yarn test
+install:
+  - npm install -g firebase-tools
+after_success:
+  - yarn build
+  - firebase deploy --token "$FIREBASE_TOKEN"
