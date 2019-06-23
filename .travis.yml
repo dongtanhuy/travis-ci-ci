@@ -1,17 +1,17 @@
 language: node_js
 node_js:
-  - "8"
+- '8'
 cache: yarn
 script:
-  - echo 'Build starts!!'
-  - echo 'Installing Deps!'
-  - yarn
-  - echo 'Linting!'
-  - yarn lint
-  - echo 'Testing!'
-  - yarn test
-install:
-  - npm install -g firebase-tools
-after_success:
-  - yarn build
-  - firebase deploy --token "$FIREBASE_TOKEN"
+- echo 'Build starts!!'
+- echo 'Installing Deps!'
+- yarn
+- echo 'Linting!'
+- yarn lint
+- echo 'Testing!'
+- yarn test
+deploy:
+  provider: heroku
+  api_key:
+    secure: Z5whOS132gdNVoQEmrED6notoyiF2JFIPvKBk9KF/MamvLB1L9sf7jVcrZNzzT7K1HeYn40MsfDyBh+buj61bCNsuN/XknZVgnlcuVMX71oLuntg/SnSOsHgj9CTvi+40zfUcoUcaeqEwMQj0TnpShEl0Gzs4w0lpgLBmA+cNq4wknC7HRNUjGbbahktZRsJsd4chXg1OwVeBcUfT/k/esM4bfVHAenIfr6l1wTOIVbTQ9IK4+fF7UFwW/meFBebL7X83fcmXbs9M3W3rPvejJxeYnL3TjLzr2it2wPCzd9oGyJ9V80y6jWmWWnCqbFEju0oKXCQQY2Em+xuSm8sDbLv0BPnm4kE0clGEZ82T7OgYmBO9lJJJxn9KdKdeQGut1xQRRsxMoWbMYWiGwG3zriXCrK5QW5RX0Alr63OIQpWSISampBhEw4J4xmLluUzmZH7xEavSVnMsf6VHns7S1SggO/5tQFn3DzXLsf+PMZOCxBxk5jPdkvJkn7BZuhoqb8e8OmhohfynwTjt2WRrPkVWJjxleR0mvPqhui/Zi3j0pMMdrWWvCZZDqp6IL9OckYn3ux+pcoGQFZNgXe5vVDUPLwwFRknSGVV2h/jmcwAhBwR1YkwDZPi0wpoBwm8LP1DL9oX5IH2Jr8l/jPwOigIziJvpCZfwz+jWV5b/w4=
+  app: travis-ci-cd
